@@ -1,4 +1,6 @@
-﻿namespace XirzoResult;
+﻿using System.Data;
+
+namespace XirzoResult;
 
 public class Result<TValue>
 {
@@ -29,6 +31,9 @@ public class Result<TValue>
     }
 
     public bool IsSuccess { get; }
+    public TValue Value => IsSuccess
+        ? _value!
+        : throw new ConstraintException("Value cannot be accessed if result was not successful");
     public Error Error { get; }
 
     public TReturn Match<TReturn>(Func<TValue, TReturn> success, Func<Error, TReturn> failure)
