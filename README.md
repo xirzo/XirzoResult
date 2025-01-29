@@ -1,6 +1,6 @@
 # XirzoResult Library ✨
 
-A lightweight library that provides a simple success/error result type, allowing you to handle outcomes in a clean and expressive way.
+A lightweight library that provides a simple success/error result type.
 
 
 ## Example Usage 🚀
